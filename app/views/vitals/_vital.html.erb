@@ -40,7 +40,19 @@
       コメント入れる
       </div>
       <div class="card_feces">
-        <%= image_tag 'feces.svg' %>
+        <% if current_user.defecation_by?(vital) %>
+          <div class="vital_feces">
+            <%= link_to vital_defecations_path(vital), data: { method: 'delete' } do%>
+              <%= image_tag 'feces-active.svg' %>
+            <% end %>
+          </div>
+        <% else %>
+          <div class="vital_feces">
+            <%= link_to vital_defecations_path(vital), data: { method: 'post' } do%>
+              <%= image_tag 'feces.svg' %>
+            <% end %>
+          </div>
+        <% end %>
       </div>
       <div class="card_day">
         <p><%= l(vital.day, format: :short) %></p>

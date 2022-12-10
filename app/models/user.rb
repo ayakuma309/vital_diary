@@ -18,6 +18,7 @@ class User < ApplicationRecord
   authenticates_with_sorcery!
 
   has_many :vitals, dependent: :destroy
+  has_many :defecations, dependent: :destroy
 
   validates :password, length: { minimum: 3 }, if: -> { new_record? || changes[:crypted_password] }
   validates :password, confirmation: true, if: -> { new_record? || changes[:crypted_password] }
@@ -25,4 +26,18 @@ class User < ApplicationRecord
 
   validates :email, uniqueness: true, presence: true
   validates :name, presence: true, length: { maximum: 255 }
+
+  #排便記録
+  def defecation_by?(vital)
+    defecations.exists?(vital_id: vital.id)
+  end
+
+  def defecation(vital)
+    defecations.create!(vital_id: vital.id)
+  end
+
+  def undefecation(vital)
+    defecation = defecations.find_by!(vital_id: vital.id)
+    defecation.destroy!
+  end
 end

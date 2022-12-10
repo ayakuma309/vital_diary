@@ -11,5 +11,7 @@ Rails.application.routes.draw do
   delete 'logout', to: 'user_sessions#destroy'
 
   #バイタル
-  resources :vitals
+  resources :vitals do
+    resource :defecations, only: %i[create destroy]
+  end
 end
