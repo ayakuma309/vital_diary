@@ -19,8 +19,4 @@ class Defecation < ApplicationRecord
   belongs_to :vital
 
   validates :user_id, uniqueness: {scope: :vital_id}
-  #排便記録
-  def defecation_by?(vital)
-    defecations.exists?(vital_id: vital.id)
-  end
 end
