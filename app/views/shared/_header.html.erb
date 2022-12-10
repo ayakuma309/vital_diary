@@ -1,8 +1,14 @@
 <header class="header" id="header">
   <div class="header_logos">
     <p class="header_pageTitle">
-      <%= link_to  root_path  do %>
-        <%= image_tag 'ojisan.png', size: "60x60"%>
+      <% if logged_in?%>
+        <%= link_to  vitals_path do %>
+          <%= image_tag 'ojisan.png', size: "60x60"%>
+        <% end %>
+      <% else %>
+        <%= link_to  root_path  do %>
+          <%= image_tag 'ojisan.png', size: "60x60"%>
+        <% end %>
       <% end %>
     </p>
   </div>
@@ -11,7 +17,7 @@
     <nav id="g-nav">
       <div id="g-nav-list">
         <ul>
-          <li><a href="#">Top</a></li>
+          <li><%=link_to 'Top', root_path, class: 'dropdown-item' %></li>
           <li><%=link_to 'Vital', vitals_path, class: 'dropdown-item' %></li>
           <li><%=link_to t('defaults.logout'), logout_path, method: :delete , class: 'dropdown-item' %></li>
         </ul>
