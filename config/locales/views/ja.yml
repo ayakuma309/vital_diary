@@ -7,14 +7,14 @@ ja:
     show: '詳細'
     edit: '編集'
     delete: '削除'
-  message:
-    not_authenticated: 'ログインしてください'
-    created: '%{item}を作成しました'
-    not_created: '%{item}を作成できませんでした'
-    updated: '%{item}を更新しました'
-    not_updated: '%{item}を更新できませんでした'
-    deleted: '%{item}を削除しました'
-    delete_confirm: '削除しますか?'
+    message:
+      not_authenticated: 'ログインしてください'
+      created: '%{item}を作成しました'
+      not_created: '%{item}を作成できませんでした'
+      updated: '%{item}を更新しました'
+      not_updated: '%{item}を更新できませんでした'
+      deleted: '%{item}を削除しました'
+      delete_confirm: '削除しますか?'
   users:
     new:
       title: 'ユーザー登録'

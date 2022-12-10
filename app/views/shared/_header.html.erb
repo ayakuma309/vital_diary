@@ -12,7 +12,7 @@
       <div id="g-nav-list">
         <ul>
           <li><a href="#">Top</a></li>
-          <li><a href="#">Vital</a></li>
+          <li><%=link_to 'Vital', vitals_path, class: 'dropdown-item' %></li>
           <li><%=link_to t('defaults.logout'), logout_path, method: :delete , class: 'dropdown-item' %></li>
         </ul>
       </div>

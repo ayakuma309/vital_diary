@@ -12,7 +12,7 @@ class VitalsController < ApplicationController
   end
 
   def create
-    @vital = current_user.vital.build(vital_params)
+    @vital = current_user.vitals.build(vital_params)
     if @vital.save
       redirect_to vital_path(@vital), success: t('defaults.message.created', item: Vital.model_name.human)
     else
