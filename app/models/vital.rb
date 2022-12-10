@@ -19,4 +19,11 @@
 #
 class Vital < ApplicationRecord
   belongs_to :user
+
+  validates :day , presence: true
+  validates :high_bp , presence: true
+  validates :low_bp , presence: true
+  validates :pulse , presence: true
+  validates :temperature , presence: true
+  validates :oxygen_saturation, presence: true, numericality: { greater_than_or_equal_to: 90 }
 end
