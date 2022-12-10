@@ -2,12 +2,20 @@ ja:
   activerecord:
     models:
       user: 'ユーザー'
+      vital: 'バイタル'
     attributes:
       user:
         name: 'お名前'
         email: 'メールアドレス'
         password: 'パスワード'
         password_confirmation: 'パスワード確認'
+      vital:
+        day: '計測日'
+        oxygen_saturation: '酸素飽和度'
+        high_bp: '収縮期血圧（上の血圧）'
+        low_bp: "拡張期血圧（下の血圧）"
+        pulse: "脈拍"
+        temperature: "体温"
   attributes:
     id: 'ID'
     created_at: '作成日時'
