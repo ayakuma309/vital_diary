@@ -1,6 +1,14 @@
-<%= link_to vital_path(vital) do %>
-  <div class="card">
-    <div class="card_vital container">
+
+<div class="card">
+  <div class="card_vital container">
+    <div class="dropdown">
+      <%= image_tag "actions.svg",class: 'dropbtn'%>
+      <div class="dropdown-content mini">
+        <%= link_to '編集する',edit_vital_path(vital) %>
+        <%= link_to '削除する',vital_path(vital),data:{method: 'delete',confirm:'本当に削除してもよろしいですか？'}%>
+      </div>
+    </div>
+    <%= link_to vital_path(vital) do %>
       <table class="table table-hover">
         <thead>
           <tr>
@@ -24,19 +32,19 @@
           </tr>
         </tbody>
       </table>
-    </div>
-    <div class="card_detail">
-      <div class="card_content">
-        <div class="card_comment">
-        コメント入れる
-        </div>
-        <div class="card_feces">
-          <%= image_tag 'feces.svg' %>
-        </div>
-        <div class="card_day">
-          <p><%= l(vital.day, format: :short) %></p>
-        </div>
+    <% end %>
+  </div>
+  <div class="card_detail">
+    <div class="card_content">
+      <div class="card_comment">
+      コメント入れる
+      </div>
+      <div class="card_feces">
+        <%= image_tag 'feces.svg' %>
+      </div>
+      <div class="card_day">
+        <p><%= l(vital.day, format: :short) %></p>
       </div>
     </div>
   </div>
-<% end %>
+</div>
