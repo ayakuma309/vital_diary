@@ -18,4 +18,5 @@
 #  index_vitals_on_user_id  (user_id)
 #
 class Vital < ApplicationRecord
+  belongs_to :user
 end
