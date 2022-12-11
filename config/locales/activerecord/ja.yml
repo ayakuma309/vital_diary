@@ -18,7 +18,7 @@ ja:
         pulse: "脈拍"
         temperature: "体温"
       comment:
-        content: '内容'
+        content: '今日の一言'
   attributes:
     id: 'ID'
     created_at: '作成日時'
