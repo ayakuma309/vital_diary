@@ -20,6 +20,7 @@
 class Vital < ApplicationRecord
   belongs_to :user
   has_many :defecations, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   validates :day , presence: true
   validates :high_bp , presence: true
