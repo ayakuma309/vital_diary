@@ -3,6 +3,7 @@ ja:
     models:
       user: 'ユーザー'
       vital: 'バイタル'
+      comment: 'コメント'
     attributes:
       user:
         name: 'お名前'
@@ -16,6 +17,8 @@ ja:
         low_bp: "拡張期血圧（下の血圧）"
         pulse: "脈拍"
         temperature: "体温"
+      comment:
+        content: '今日の一言'
   attributes:
     id: 'ID'
     created_at: '作成日時'
