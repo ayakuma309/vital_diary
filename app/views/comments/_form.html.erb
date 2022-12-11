@@ -1,0 +1,10 @@
+<%= form_with model: comment,url: [vital,comment], local: true  do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    <div>
+      <%= f.label :content %>
+    </div>
+    <div>
+      <%= f.text_field :content, class: 'form-control' %>
+    </div>
+    <%= f.submit  class: 'btn-log' %>
+<% end %>

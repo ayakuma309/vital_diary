@@ -5,7 +5,10 @@ class VitalsController < ApplicationController
     @vitals = current_user.vitals
   end
 
-  def show; end
+  def show
+    @comment = Comment.new
+    @comments = @vital.comments
+  end
 
   def new
     @vital = current_user.vitals.build
