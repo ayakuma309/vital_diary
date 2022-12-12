@@ -1,9 +1,0 @@
-<div class="timeline_content">
-  <span class="timeline_time">
-    <%= l(comment.created_at, format: :time) %>
-  </span>
-</div>
-<div class="timeline_detail">
-  <%= simple_format(comment.content) %>
-  <%= link_to '削除' ,comment_path(comment), data: { method: 'delete',confirm: t('defaults.message.delete_confirm') }  %>
-</div>

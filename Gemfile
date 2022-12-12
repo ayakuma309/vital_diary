@@ -51,6 +51,7 @@ group :development do
   gem 'spring'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'erb2haml'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -59,3 +60,4 @@ gem 'annotate'
 gem 'enum_help'
 gem 'rails-i18n'
 gem 'sorcery'
+gem 'hamlit'

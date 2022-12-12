@@ -1,0 +1,34 @@
+.card
+  .card_vital.container
+    .dropdown
+      = image_tag "actions.svg",class: 'dropbtn'
+      .dropdown-content.mini
+        = link_to '編集する',edit_vital_path(vital)
+        = link_to '削除する',vital_path(vital),data:{method: 'delete',confirm:'本当に削除してもよろしいですか？'}
+    = link_to vital_path(vital) do
+      %table.table.table-hover
+        %thead
+          %tr
+            %th 体温
+            %th 高血圧
+            %th 低血圧
+            %th 脈拍
+            %th 酸素飽和度
+            %th{:colspan => "3"}
+        %tbody
+          %tr
+            %td
+              = vital.temperature
+            %td= vital.high_bp
+            %td= vital.low_bp
+            %td= vital.pulse
+            %td= vital.oxygen_saturation
+  .vital{:id => "vital_#{vital.id}"}
+    .card_detail
+      .card_content
+        .card_comment
+          コメント入れる
+        .card_feces.feces-btn
+          = render 'defecations/defecation', vital: vital
+        .card_day
+          %p= l(vital.day, format: :short)
