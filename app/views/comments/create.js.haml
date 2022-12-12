@@ -1,0 +1,6 @@
+$("#error_messages").remove()
+- if @comment.errors.present?
+  $("#new_comment").prepend("#{j(render 'shared/error_messages', object: @comment)}")
+- else
+  $("#js_comment_content ").append("#{j(render'comments/comment', comment: @comment)}");
+  $("#comment_content").val('');

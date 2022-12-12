@@ -2,13 +2,11 @@ class CommentsController < ApplicationController
   def create
     @comment = current_user.comments.build(comment_params)
     @comment.save
-    redirect_to vital_path(@comment.vital), notice: 'コメントを追加'
   end
 
   def destroy
     @comment = current_user.comments.find(params[:id])
     @comment.destroy!
-    redirect_to vital_path(@comment.vital), notice: 'コメントを削除'
   end
 
   private
