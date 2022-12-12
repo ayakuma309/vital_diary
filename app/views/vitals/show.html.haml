@@ -1,0 +1,7 @@
+.container
+  = render 'vital', vital: @vital
+  .vital
+    / コメントエリア
+    = render 'comments/comments', { comments: @comments }
+    / コメントフォーム
+    = render 'comments/form', { vital: @vital, comment: @comment }

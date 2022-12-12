@@ -87,7 +87,10 @@ GEM
     diff-lcs (1.5.0)
     enum_help (0.0.19)
       activesupport (>= 3.0.0)
+    erb2haml (0.1.5)
+      html2haml
     erubi (1.11.0)
+    erubis (2.7.0)
     factory_bot (6.2.1)
       activesupport (>= 5.0.0)
     factory_bot_rails (6.2.0)
@@ -100,7 +103,20 @@ GEM
     ffi (1.15.5)
     globalid (1.0.0)
       activesupport (>= 5.0)
+    haml (6.1.1)
+      temple (>= 0.8.2)
+      thor
+      tilt
+    hamlit (3.0.3)
+      temple (>= 0.8.2)
+      thor
+      tilt
     hashie (5.0.0)
+    html2haml (2.3.0)
+      erubis (~> 2.7.0)
+      haml (>= 4.0)
+      nokogiri (>= 1.6.0)
+      ruby_parser (~> 3.5)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     jbuilder (2.11.5)
@@ -240,6 +256,8 @@ GEM
       rubocop (>= 1.33.0, < 2.0)
     ruby-progressbar (1.11.0)
     ruby2_keywords (0.0.5)
+    ruby_parser (3.19.2)
+      sexp_processor (~> 4.16)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
     sassc (2.4.0)
@@ -251,6 +269,7 @@ GEM
       sprockets-rails
       tilt
     semantic_range (3.0.0)
+    sexp_processor (4.16.1)
     snaky_hash (2.0.1)
       hashie
       version_gem (~> 1.1, >= 1.1.1)
@@ -266,6 +285,7 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
+    temple (0.9.1)
     thor (1.2.1)
     tilt (2.0.11)
     timeout (0.3.1)
@@ -303,7 +323,9 @@ DEPENDENCIES
   bullet
   byebug
   enum_help
+  erb2haml
   factory_bot_rails
+  hamlit
   jbuilder (~> 2.7)
   listen (~> 3.3)
   pg (~> 1.1)

@@ -1,0 +1,6 @@
+.timeline_content
+  %span.timeline_time
+    = l(comment.created_at, format: :time)
+.timeline_detail
+  = simple_format(comment.content)
+  = link_to '削除' ,comment_path(comment), data: { method: 'delete',confirm: t('defaults.message.delete_confirm') }
