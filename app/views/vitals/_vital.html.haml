@@ -16,25 +16,19 @@
             %th 酸素飽和度
             %th{:colspan => "3"}
         %tbody
-          %tr{:id => "vital_#{vital.id}"}
+          %tr
             %td
               = vital.temperature
             %td= vital.high_bp
             %td= vital.low_bp
             %td= vital.pulse
             %td= vital.oxygen_saturation
-  .card_detail
-    .card_content
-      .card_comment
-        コメント入れる
-      .card_feces
-        - if current_user.defecation_by?(vital)
-          .vital_feces
-            = link_to vital_defecations_path(vital), data: { method: 'delete' } do
-              = image_tag 'feces-active.svg'
-        - else
-          .vital_feces
-            = link_to vital_defecations_path(vital), data: { method: 'post' } do
-              = image_tag 'feces.svg'
-      .card_day
-        %p= l(vital.day, format: :short)
+  .vital{:id => "vital_#{@vital.id}"}
+    .card_detail
+      .card_content
+        .card_comment
+          コメント入れる
+        .card_feces.feces-btn
+          = render 'defecations/defecation', vital: vital
+        .card_day
+          %p= l(vital.day, format: :short)
