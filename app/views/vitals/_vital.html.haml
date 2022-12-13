@@ -10,19 +10,18 @@
         %thead
           %tr
             %th 体温
-            %th 高血圧
-            %th 低血圧
+            %th 血圧(上)
+            %th 血圧(下)
             %th 脈拍
             %th 酸素飽和度
             %th{:colspan => "3"}
         %tbody
           %tr
-            %td
-              = vital.temperature
-            %td= vital.high_bp
-            %td= vital.low_bp
-            %td= vital.pulse
-            %td= vital.oxygen_saturation
+            %td{:class => "#{vital.check_temprature}"}= vital.temperature
+            %td{:class => "#{vital.check_high_bp}"}= vital.high_bp
+            %td{:class => "#{vital.check_low_bp}"}= vital.low_bp
+            %td{:class => "#{vital.check_pulse}"}= vital.pulse
+            %td{:class => "#{vital.check_oxygen_saturation}"}= vital.oxygen_saturation
   .vital{:id => "vital_#{vital.id}"}
     .card_detail
       .card_content
