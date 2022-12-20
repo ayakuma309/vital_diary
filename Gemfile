@@ -62,3 +62,5 @@ gem 'rails-i18n'
 gem 'sorcery'
 gem 'hamlit'
 gem 'active_decorator'
+
+gem 'kaminari'

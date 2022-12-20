@@ -2,7 +2,7 @@ class VitalsController < ApplicationController
   before_action :set_vital, only: %i[show edit update]
 
   def index
-    @vitals = current_user.vitals
+    @vitals = current_user.vitals.order(day: :desc).page(params[:page])
   end
 
   def show

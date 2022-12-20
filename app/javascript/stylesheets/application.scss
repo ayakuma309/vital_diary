@@ -47,3 +47,17 @@ body {
   padding: 16px 16px;
   width: 100%;
 }
+
+//pagenation
+.page-item {
+  &.active .page-link {
+    z-index: 3;
+    color: $pagination-active-color;
+    background-color: $primary-color;
+    border-color: $primary-color;
+  }
+}
+
+.page-link {
+  color: $primary-color
+}
