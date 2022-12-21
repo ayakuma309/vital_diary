@@ -28,4 +28,9 @@ class Vital < ApplicationRecord
   validates :pulse , presence: true
   validates :temperature , presence: true
   validates :oxygen_saturation, presence: true, numericality: { greater_than_or_equal_to: 90 }
+
+  #検索一日検索
+  scope :search_information, -> (keyword){
+    where(day: keyword.in_time_zone.all_day)
+  }
 end
