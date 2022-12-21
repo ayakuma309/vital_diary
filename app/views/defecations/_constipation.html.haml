@@ -1,0 +1,8 @@
+- if ! constipation.exists?
+  .advise
+    = image_tag 'ojisan2.png',size: '100x100'
+    %div.advise_message
+      %p
+        %span.text-dark
+          便秘気味です
+      (#{2.day.ago.to_date}~#{Time.zone.now.to_date}の間)
