@@ -4,7 +4,9 @@
       .text-center.footer_text
         = image_tag "ojisan.png", size: "50x50"
         .footer_balloon
-          %pこんにちは。これは例です。
-
+          %p
+            = link_to "利用規約", terms_path, class:"footer-text"
+            \/
+            \#{link_to "プライバシーポリシー", privacy_path, class:"footer-text"}
         .copyright
           %p Copyright © 2023 バイタル日記
