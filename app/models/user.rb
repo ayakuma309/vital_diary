@@ -41,4 +41,10 @@ class User < ApplicationRecord
     defecation = defecations.find_by!(vital_id: vital.id)
     defecation.destroy!
   end
+
+  def search_vitals(keyword)
+    return vitals.order(day: :desc) unless keyword.present?
+
+    vitals.search_information(keyword)
+  end
 end

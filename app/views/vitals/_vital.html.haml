@@ -25,8 +25,7 @@
   .vital{:id => "vital_#{vital.id}"}
     .card_detail
       .card_content
-        .card_comment
-          コメント入れる
+        コメント数(#{vital.comments.count})
         .card_feces.feces-btn
           = render 'defecations/defecation', vital: vital
         .card_day
