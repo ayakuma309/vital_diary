@@ -1,5 +1,7 @@
 .container
   = render 'commons/search'
+  #constipation
+    = render 'defecations/constipation', constipation: @constipation
   = render @vitals
   = render 'new_btn'
   = paginate @vitals

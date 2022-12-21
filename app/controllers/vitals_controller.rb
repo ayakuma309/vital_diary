@@ -4,6 +4,8 @@ class VitalsController < ApplicationController
   def index
     @keyword = params[:keyword]&.strip || ''
     @vitals = current_user.search_vitals(@keyword).page(params[:page])
+    #便秘機能
+    @constipation = current_user.user_constipation
   end
 
   def show

@@ -19,6 +19,9 @@ class User < ApplicationRecord
 
   has_many :vitals, dependent: :destroy
   has_many :defecations, dependent: :destroy
+  #便秘機能
+  has_many :defecation_vitals, through: :defecations, source: :vital
+
   has_many :comments, dependent: :destroy
 
   validates :password, length: { minimum: 3 }, if: -> { new_record? || changes[:crypted_password] }
@@ -46,5 +49,11 @@ class User < ApplicationRecord
     return vitals.order(day: :desc) unless keyword.present?
 
     vitals.search_information(keyword)
+  end
+
+  def user_constipation
+    if vitals.vital_three_days.exists?
+      defecation_vitals.vital_three_days
+    end
   end
 end
