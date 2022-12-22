@@ -4,6 +4,7 @@ ja:
       user: 'ユーザー'
       vital: 'バイタル'
       comment: 'コメント'
+      profile: 'プロフィール'
     attributes:
       user:
         name: 'お名前'

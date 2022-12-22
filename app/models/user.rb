@@ -33,6 +33,8 @@ class User < ApplicationRecord
   validates :email, uniqueness: true, presence: true
   validates :name, presence: true, length: { maximum: 255 }
 
+  delegate :birthday,:weight,:age, to: :profile, allow_nil: true
+
   #排便記録
   def defecation_by?(vital)
     defecations.exists?(vital_id: vital.id)

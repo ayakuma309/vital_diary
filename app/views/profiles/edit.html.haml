@@ -1,24 +1,24 @@
 .container
   = link_to '戻る', :back, class: "btn btn-secondary btn-sm"
   %ul
-    = render 'layouts/error', object: @profile
   = form_with(model: @profile, url: profile_path, method: 'put', local: true) do |f|
+    = render 'shared/error_messages', object: f.object
     %div
       = f.label :birthday
     %div
-      = f.date_field :birthday, class: 'text'
+      = f.date_field :birthday, class: 'form-control'
     %div
       = f.label :blood_type
     %div
-      = f.select :blood_type, Profile.blood_types_i18n.invert, {include_blank: "血液型を選択してください"}, {class: "text"}
+      = f.select :blood_type, Profile.blood_types_i18n.invert, {include_blank: "血液型を選択してください"}, {class: 'form-control'}
     %div
       = f.label :gender
     %div
-      = f.select :gender, Profile.genders_i18n.invert, {include_blank: "性別を選択してください"}, { class: 'text' }
+      = f.select :gender, Profile.genders_i18n.invert, {include_blank: "性別を選択してください"}, {class: 'form-control' }
     %div
       = f.label :weight
     %div
-      = f.text_field :weight, class: 'text', placeholder: "46.2"
+      = f.text_field :weight, class: 'form-control', placeholder: "46.2(数値のみ)"
     %div
       = f.label :important_term
     %div

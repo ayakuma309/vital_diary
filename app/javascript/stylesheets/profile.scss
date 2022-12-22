@@ -5,6 +5,7 @@ $image_size: 56px;
 
   &_user {
     display: flex;
+    justify-content: center;
 
     &_image {
       display: flex;
@@ -48,7 +49,12 @@ $image_size: 56px;
     }
 
     &_important {
-      font-size: 12px;
+      font-size: 15px;
+    }
+
+    &_term{
+      font-weight: bold;
+      color: red;
     }
   }
 }
