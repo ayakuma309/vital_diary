@@ -24,12 +24,16 @@ class User < ApplicationRecord
 
   has_many :comments, dependent: :destroy
 
+  has_one :profile, dependent: :destroy
+
   validates :password, length: { minimum: 3 }, if: -> { new_record? || changes[:crypted_password] }
   validates :password, confirmation: true, if: -> { new_record? || changes[:crypted_password] }
   validates :password_confirmation, presence: true, if: -> { new_record? || changes[:crypted_password] }
 
   validates :email, uniqueness: true, presence: true
   validates :name, presence: true, length: { maximum: 255 }
+
+  delegate :birthday,:weight,:age, to: :profile, allow_nil: true
 
   #排便記録
   def defecation_by?(vital)
@@ -55,5 +59,10 @@ class User < ApplicationRecord
     if vitals.vital_three_days.exists?
       defecation_vitals.vital_three_days
     end
+  end
+
+  #プロフィール
+  def prepare_profile
+    profile || build_profile
   end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_12_11_002555) do
+ActiveRecord::Schema.define(version: 2022_12_22_110515) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,18 @@ ActiveRecord::Schema.define(version: 2022_12_11_002555) do
     t.index ["user_id", "vital_id"], name: "index_defecations_on_user_id_and_vital_id", unique: true
     t.index ["user_id"], name: "index_defecations_on_user_id"
     t.index ["vital_id"], name: "index_defecations_on_vital_id"
+  end
+
+  create_table "profiles", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.integer "gender"
+    t.integer "blood_type"
+    t.date "birthday"
+    t.float "weight"
+    t.text "important_term"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   #バイタル
   resources :vitals do
     resource :defecations, only: %i[create destroy]
-    resources :comments, only: [:create, :destroy],shallow: true
+    resources :comments, only: %i[create destroy],shallow: true
   end
+  resource :profile, only: %i[show edit update]
 end

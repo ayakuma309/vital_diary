@@ -17,6 +17,7 @@
         #g-nav-list
           %ul
             %li= link_to 'Top', root_path, class: 'dropdown-item'
+            %li= link_to 'Mypage', profile_path
             %li= link_to 'Vital', vitals_path, class: 'dropdown-item'
             %li= link_to t('defaults.logout'), logout_path, method: :delete , class: 'dropdown-item'
     - else
