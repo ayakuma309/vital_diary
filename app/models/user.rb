@@ -58,4 +58,9 @@ class User < ApplicationRecord
       defecation_vitals.vital_three_days
     end
   end
+
+  #プロフィール
+  def prepare_profile
+    profile || build_profile
+  end
 end
