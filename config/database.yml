@@ -81,6 +81,6 @@ test:
 #
 production:
   <<: *default
-  database: vital_diary_production
-  username: vital_diary
+  database: clc05j6hq0074bequ83wxayem
+  username: clc05j6hp0072bequgzncf00m
   password: <%= ENV['VITAL_DIARY_DATABASE_PASSWORD'] %>
