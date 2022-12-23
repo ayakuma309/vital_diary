@@ -19,4 +19,6 @@ Rails.application.routes.draw do
     resources :comments, only: %i[create destroy],shallow: true
   end
   resource :profile, only: %i[show edit update]
+  #既往歴
+  resources :medical_histories, except: [:index, :show]
 end
