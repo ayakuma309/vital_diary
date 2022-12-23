@@ -1,0 +1,84 @@
+
+@import 'variables';
+.caregiver{
+  display: flex;
+
+  &_message{
+    position: relative;
+    display: inline-block;
+    margin: 0em 0 15px 0px;
+    padding: 10px 10px;
+    min-width: 120px;
+    max-width: 100%;
+    color: #fff;
+    font-size: 16px;
+    background: $primary-color;
+    border-radius: 10px;
+    font-weight: bold;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: -30px;
+      margin-top: -15px;
+      border: 15px solid transparent;
+      border-right: 15px solid $primary-color;
+    }
+
+    p{
+      margin: 0;
+      padding: 0;
+    }
+
+  }
+}
+//topタイトル
+.top-heading{
+  position: relative;
+  display: inline-block;
+  margin: 1.5em 0 0;
+  padding: 7px 10px;
+  min-width: 120px;
+  max-width: 100%;
+  color: #555;
+  font-size: 16px;
+  background: #FFF;
+  border: solid 3px #555;
+  box-sizing: border-box;
+  p {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+  }
+}
+
+.apeal{
+    display: inline-block;
+    margin:  1.5em 0 0 0.5em;
+    padding: 7px 10px;
+    min-width: 120px;
+    max-width: 100%;
+    color: #fff;
+    font-size: 16px;
+    background: #03111b;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.top-image_item{
+  img{
+    width: 30%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+	.caregiver_support{
+	  display: none;
+	}
+	.top-image_item{
+  img{
+    width: 100%;
+  }
+}
+}
