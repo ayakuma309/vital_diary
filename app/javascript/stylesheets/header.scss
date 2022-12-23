@@ -14,8 +14,9 @@ $header-padding-y: 10px;
     color: white;
     text-decoration: none;
   }
-
-
+  a:active{
+    background-color: white;
+  }
   a.header_loginBtn {
     background-color: white;
     height: $header-size;
