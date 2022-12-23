@@ -11,6 +11,8 @@
           = current_user.name
         .profilePage_user_actionButton
           = link_to 'Edit', edit_profile_path
+        .profilePage_user_actionButton
+          = link_to '既往歴登録', new_medical_history_path
       .profilePage_user_important
         #{current_user.birthday}
         #{current_user.age}
@@ -23,3 +25,4 @@
         %br
         .profilePage_user_term
           = current_user.profile&.important_term
+  = render 'medical_histories/medical_histories'

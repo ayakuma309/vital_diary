@@ -1,0 +1,24 @@
+.container
+  = link_to '戻る', profile_path, class: "btn btn-secondary btn-sm"
+  = form_with(model: medical_history, local: true) do |f|
+    = render 'shared/error_messages', object: f.object
+    %div
+      = f.label :disease_name, '●これまでにかかったことのある病気名', class: "medical_history_form"
+    %div
+      = f.text_field :disease_name, class: 'form-control'
+    %div
+      %p
+        (例)糖尿病、高血圧、腎臓病、肝臓病、喘息、心臓疾患
+        胃潰瘍、緑内障、脳疾患、がん(部位　)、その他
+    %div.mt-3
+      = f.label :in_treatment, '●治療中ですか', class: "medical_history_form"
+    %div
+      = f.radio_button :in_treatment, "true"
+      = f.label :in_treatment, 'はい'
+      = f.radio_button :in_treatment, "false"
+      = f.label :in_treatment, 'いいえ'
+    %div.mt-3
+      = f.label :when_onset, '●いつ頃ですか', class: "medical_history_form"
+    %div
+      = f.date_field :when_onset, class: 'form-control'
+    = f.submit '保存', class: 'btn-log'

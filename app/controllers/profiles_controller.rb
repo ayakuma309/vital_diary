@@ -1,6 +1,8 @@
 class ProfilesController < ApplicationController
   def show
     @profile = current_user.profile
+    @current_medical_history = current_user.medical_histories.is_during_treatment(true)
+    @medical_histories = current_user.medical_histories.is_during_treatment(false)
   end
 
   def edit
