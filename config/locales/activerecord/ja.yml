@@ -5,6 +5,7 @@ ja:
       vital: 'バイタル'
       comment: 'コメント'
       profile: 'プロフィール'
+      medical_history: '既往歴'
     attributes:
       user:
         name: 'お名前'
