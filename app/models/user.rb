@@ -27,7 +27,7 @@ class User < ApplicationRecord
   has_one :profile, dependent: :destroy
   #既往歴
   has_many :medical_histories, dependent: :destroy
-  
+
   validates :password, length: { minimum: 3 }, if: -> { new_record? || changes[:crypted_password] }
   validates :password, confirmation: true, if: -> { new_record? || changes[:crypted_password] }
   validates :password_confirmation, presence: true, if: -> { new_record? || changes[:crypted_password] }
@@ -58,9 +58,11 @@ class User < ApplicationRecord
   end
 
   def user_constipation
-    if vitals.vital_three_days.exists?
-      defecation_vitals.vital_three_days
-    end
+    defecation_vitals.vital_three_days
+  end
+
+  def vital_exists?
+    vitals.vital_three_days.exists?
   end
 
   #プロフィール
