@@ -21,6 +21,16 @@ ja:
         temperature: "体温"
       comment:
         content: '今日の一言'
+      profile:
+        birthday: '誕生日'
+        blood_type: '血液型'
+        gender: '性別'
+        important_term: '重要事項'
+        weight: '体重'
+      medical_history:
+        disease_name: 'これまでにかかったことのある病気名'
+        in_treatment: '治療中ですか'
+        when_onset: 'いつ頃ですか'
   attributes:
     id: 'ID'
     created_at: '作成日時'
